@@ -3,15 +3,17 @@ import os
 working = True
 
 
-def ask_for_directory(directory):
+# This method ask if the path exist or not.
+def ask_for_directory():
 
-    if not os.path.isfile(directory):
-        print('is not a path')
+    path = str(input('First of all select your path. Write down below your path:'))
+    if not os.path.isdir(path):
+        print('is not a path', os.path.isfile(path))
     else:
-        print('is a path')
+        print('Error 00. You have added an wrong syntax path. Please try again.')
+        input("Press enter.")
 
 
 while working:
     print('Welcome to file randomizer.')
-    path = input('First of all select your path. Write down below your path:')
-    ask_for_directory(path)
+    ask_for_directory()
